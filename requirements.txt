@@ -1,1 +1,9 @@
 streamlit
+pandas
+numpy
+matplotlib
+plotly
+smtplib3
+scipy
+hashlib3
+sqlite3-tools
