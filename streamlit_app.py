@@ -22,6 +22,14 @@ st.set_page_config(
    initial_sidebar_state="expanded"
 )
 
+# For a gradient background:
+st.markdown("""
+<style>
+    .stApp {
+        background: linear-gradient(to right, #E8F0FE, #D4E4FA);
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # --- Constants and Parameters ---
 NATIVE_CARTILAGE = {
