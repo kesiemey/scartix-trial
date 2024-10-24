@@ -10,6 +10,8 @@ import plotly.graph_objects as go
 import smtplib
 from email.mime.text import MIMEText
 from scipy.stats import norm
+import re
+from email.message import EmailMessage
 
 
 # --- Page Configuration ---
@@ -1103,15 +1105,6 @@ def is_valid_name(name):
     """Check if name contains at least first and last name"""
     return len(name.strip().split()) >= 2
 
-def is_valid_email(email):
-    """Check if email is valid"""
-    pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
-    return re.match(pattern, email) is not None
-
-def is_valid_name(name):
-    """Check if name contains at least first and last name"""
-    return len(name.strip().split()) >= 2
-
 def technicalsupport_page():
     st.markdown("""
         <style>
@@ -1149,6 +1142,7 @@ def technicalsupport_page():
 
 .header-title {
     font-size: 2.5rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -1158,19 +1152,6 @@ def technicalsupport_page():
     font-size: 1.25rem;
     color: var(--light-gray);
     max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Form Styling - Matching card styling from home page */
-.support-form {
-    background-color: var(--white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--secondary-blue);
-    transition: transform 0.2s ease-in-out;
-    max-width: 800px;
     margin: 0 auto;
 }
 
